@@ -1,52 +1,180 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+#include <stdlib.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main() //The program relies on proper input.
+{
+    int playerChoise; //1 - 4. 1 = rock, 2 = paper , 3 = scissors
+    int computerChoise;
+    char rps;
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    printf("choose rock or paper or scissors\nr for rock , p for papers, s for scissors\n");
+    scanf("%c" , &rps);
 
-# Precompiled Headers
-*.gch
-*.pch
+    if(rps == 'r')
+    {
+        playerChoise = 1;
+    }
+    else if(rps == 'p')
+    {
+        playerChoise = 2;
+    }
+    else if(rps == 's')
+    {
+        playerChoise = 3;
+    }
+    else
+    {
+        printf("error! invalid move!\n");
+    }
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+    computerChoise = 2;
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+    if(computerChoise == playerChoise)
+    {
+        printf("DRAW");
+    }
+    else if(playerChoise == 1)
+    {
+        printf("sorry, computer won with paper");
+    }
+    else if(playerChoise == 3)
+    {
+        printf("you won! computer choose paper");
+    }
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+    if(playerChoise == 2)
+    {
+        computerChoise = 2;
+    }
+    else if(playerChoise == 1)
+    {
+        computerChoise = 3;
+    }
+    else if(playerChoise == 3)
+    {
+        computerChoise = 1;
+    }
+
+    printf("\n\n\n----------Again!----------\n\n\n");
+
+    char sPlayerChoise;
+
+    printf("r for rock , p for papers, s for scissors\n");
+    scanf("%s" , &sPlayerChoise);
+
+    if(sPlayerChoise == 'r')
+    {
+        playerChoise = 1;
+    }
+    else if(sPlayerChoise == 'p')
+    {
+        playerChoise = 2;
+    }
+    else if(sPlayerChoise == 's')
+    {
+        playerChoise = 3;
+    }
+    else
+    {
+        printf("error! invalid move!\n");
+    }
+
+    if(computerChoise == playerChoise)
+    {
+        printf("DRAW");
+    }
+    else if(playerChoise == 1 && computerChoise == 2)
+    {
+        printf("sorry, computer won with paper");
+    }
+    else if(playerChoise == 1 && computerChoise == 3)
+    {
+        printf("you won! computer choose scissors");
+    }
+    else if(playerChoise == 2 && computerChoise == 1)
+    {
+        printf("you won! computer choose rock");
+    }
+    else if(playerChoise == 2 && computerChoise == 3)
+    {
+        printf("sorry, computer won with scissors");
+    }
+    else if(playerChoise == 3 && computerChoise == 1)
+    {
+        printf("sorry, computer won with rock");
+    }
+    else if(playerChoise == 3 && computerChoise == 2)
+    {
+        printf("you won! computer choose paper");
+    }
+
+    printf("\n\n\n----------Again!----------\n\n\n");
+
+    char tPlayerChoise;
+
+    if(computerChoise == 1 && playerChoise == 2 || computerChoise == 2 && playerChoise == 1)
+    {
+        computerChoise = 3;
+    }
+    else if(computerChoise == 3 && playerChoise == 2 || computerChoise == 2 && playerChoise == 3)
+    {
+        computerChoise = 1;
+    }
+    else if(computerChoise == 1 && playerChoise == 3 || computerChoise == 3 && playerChoise == 1)
+    {
+        computerChoise = 2;
+    }
+
+    printf("r for rock , p for papers, s for scissors\n");
+    scanf("%s" , &tPlayerChoise);
+
+    if(tPlayerChoise == 'r')
+    {
+        playerChoise = 1;
+    }
+    else if(tPlayerChoise == 'p')
+    {
+        playerChoise = 2;
+    }
+    else if(tPlayerChoise == 's')
+    {
+        playerChoise = 3;
+    }
+    else
+    {
+        printf("error! invalid move!\n");
+    }
+
+    if(computerChoise == playerChoise)
+    {
+        printf("DRAW");
+    }
+    else if(playerChoise == 1 && computerChoise == 2)
+    {
+        printf("sorry, computer won with paper");
+    }
+    else if(playerChoise == 1 && computerChoise == 3)
+    {
+        printf("you won! computer choose scissors");
+    }
+    else if(playerChoise == 2 && computerChoise == 1)
+    {
+        printf("you won! computer choose rock");
+    }
+    else if(playerChoise == 2 && computerChoise == 3)
+    {
+        printf("sorry, computer won with scissors");
+    }
+    else if(playerChoise == 3 && computerChoise == 1)
+    {
+        printf("sorry, computer won with rock");
+    }
+    else if(playerChoise == 3 && computerChoise == 2)
+    {
+        printf("you won! computer choose paper");
+    }
+
+    return 0;
+}
